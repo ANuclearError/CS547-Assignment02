@@ -50,13 +50,14 @@ public class TCChromosome implements Comparable<TCChromosome> {
         double sum = 0;
         for (int i = 1; i <= faults; i++) {
             int fit = 1;
+            boolean found = false;
             for (TestCase tc : candidate) {
                 if (tc.getFaults().contains(i)) {
+                    found = true;
                     break;
                 }
                 fit++;
             }
-            fit = fit % (candidate.size() + 1);
             sum += fit;
         }
         fitness -= sum / (faults * candidate.size());

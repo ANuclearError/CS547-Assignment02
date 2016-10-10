@@ -2,6 +2,8 @@ package com.aidanogrady.cs547.assignment02;
 
 import com.aidanogrady.cs547.assignment02.model.TCChromosome;
 import com.aidanogrady.cs547.assignment02.model.TestCase;
+import com.aidanogrady.cs547.assignment02.search.RandomSearch;
+import com.aidanogrady.cs547.assignment02.search.Search;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,6 +42,9 @@ public class Application {
                 System.out.println("Properties are valid, let's go!");
                 System.out.println("No. of test cases: " + cases.size() + ".");
                 System.out.println();
+
+                Search search = new RandomSearch();
+                search.search(properties, cases);
             }
         }
     }

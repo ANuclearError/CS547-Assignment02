@@ -20,7 +20,7 @@ public class RandomSearch implements Search {
 
     @Override
     public Result search(Properties props, List<TestCase> cases) {
-        int setSize = Integer.parseInt(props.getProperty("numberOfTests"));
+        int setSize = Integer.parseInt(props.getProperty("size"));
         int limit = Integer.parseInt(props.getProperty("random.limit"));
 
         TCChromosome best = null;
