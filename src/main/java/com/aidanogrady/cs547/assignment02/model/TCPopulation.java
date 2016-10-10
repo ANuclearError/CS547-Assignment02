@@ -148,7 +148,7 @@ public class TCPopulation {
      * @param limit the cutoff point of where the parent should be taken from.
      * @return random chromosome
      */
-    public TCChromosome selectParent(int limit) {
+    private TCChromosome selectParent(int limit) {
         TCChromosome parent = population.get(random.nextInt(limit));
         for (int i = 0; i < tournament; i++) {
             TCChromosome opponent = population.get(random.nextInt(limit));

@@ -43,6 +43,12 @@ public class Application {
         }
     }
 
+    /**
+     * Attempts to return the list of test cases read from the given file.
+     *
+     * @param filePath the file to read test cases from.
+     * @return list of test cases from file if valid, otherwise null
+     */
     private static List<TestCase> readTestCasesFromFile(String filePath) {
         List<TestCase> list = new ArrayList<>();
 
@@ -74,6 +80,12 @@ public class Application {
         return list;
     }
 
+    /**
+     * Reads the given properties and ensures that they are valid.
+     *
+     * @param properties the properties being used
+     * @return true if valid properties, otherwise false
+     */
     private static boolean validateProperties(Properties properties) {
         String[] props = {"size", "benchmark", "random.limit",
                 "ga.population", "ga.crossover", "ga.elitism", "ga.mutation",
