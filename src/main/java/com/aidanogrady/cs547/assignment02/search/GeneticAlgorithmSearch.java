@@ -27,10 +27,12 @@ public class GeneticAlgorithmSearch implements Search {
         TCChromosome best = population.getFittest();
 
         int generations = 1;
+        LOGGER.info("Generation " + generations + ". " + best);
         while (best.getFitness() > 0) {
             population.evolve();
             best = population.getFittest();
             generations++;
+            LOGGER.info("Generation " + generations + ". Best: " + best + " Average: " + population.getAverageFitness());
         }
         return new GAResult(best, generations);
     }

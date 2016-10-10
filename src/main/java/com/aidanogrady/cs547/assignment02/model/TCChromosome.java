@@ -50,10 +50,8 @@ public class TCChromosome implements Comparable<TCChromosome> {
         double sum = 0;
         for (int i = 1; i <= faults; i++) {
             int fit = 1;
-            boolean found = false;
             for (TestCase tc : candidate) {
                 if (tc.getFaults().contains(i)) {
-                    found = true;
                     break;
                 }
                 fit++;
@@ -119,15 +117,17 @@ public class TCChromosome implements Comparable<TCChromosome> {
      * @return randomly altered chromosome
      */
     public TCChromosome mutate() {
-        TestCase[] arr = new TestCase[candidate.size()];
-        arr = candidate.toArray(arr);
+        List<TestCase> copy = new ArrayList<>(candidate);
 
-        int swap = RAND.nextInt(candidate.size() - 1);
-        TestCase temp = arr[swap];
-        arr[swap] = arr[swap+1];
-        arr[swap+1] = temp;
+        int i = RAND.nextInt(candidate.size() - 1);
+        int j = i;
+        while (i == j)
+            j = RAND.nextInt(candidate.size() - 1);
+        TestCase temp = copy.get(i);
+        copy.set(i, copy.get(j));
+        copy.set(j, temp);
 
-        return new TCChromosome(Arrays.asList(arr));
+        return new TCChromosome(copy);
     }
 
     /**
@@ -137,11 +137,14 @@ public class TCChromosome implements Comparable<TCChromosome> {
      */
     public List<TCChromosome> getNeighbours() {
         List<TCChromosome> neighbours = new ArrayList<>();
-        for (int i = 1; i < candidate.size(); i++) {
-            List<TestCase> copy = new ArrayList<>(candidate);
-            TestCase temp = copy.get(i);
-            copy.set(i, copy.get(i - 1));
-            copy.set(i - 1, temp);
+        for (int i = 0; i < candidate.size(); i++) {
+            for (int j = i+1; j < candidate.size(); j++) {
+                List<TestCase> copy = new ArrayList<>(candidate);
+                TestCase temp = copy.get(i);
+                copy.set(i, copy.get(j));
+                copy.set(j, temp);
+                neighbours.add(new TCChromosome(copy));
+            }
         }
         return neighbours;
     }

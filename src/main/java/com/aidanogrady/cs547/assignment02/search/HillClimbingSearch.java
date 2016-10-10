@@ -21,7 +21,7 @@ public class HillClimbingSearch implements Search {
 
     @Override
     public Result search(Properties props, List<TestCase> cases) {
-        int setSize = Integer.parseInt(props.getProperty("numberOfTests"));
+        int setSize = Integer.parseInt(props.getProperty("size"));
 
         int climbs = 1;
         int restarts = 0;

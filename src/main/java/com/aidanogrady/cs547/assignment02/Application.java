@@ -2,11 +2,14 @@ package com.aidanogrady.cs547.assignment02;
 
 import com.aidanogrady.cs547.assignment02.model.TCChromosome;
 import com.aidanogrady.cs547.assignment02.model.TestCase;
+import com.aidanogrady.cs547.assignment02.search.GeneticAlgorithmSearch;
+import com.aidanogrady.cs547.assignment02.search.HillClimbingSearch;
 import com.aidanogrady.cs547.assignment02.search.RandomSearch;
 import com.aidanogrady.cs547.assignment02.search.Search;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -43,8 +46,9 @@ public class Application {
                 System.out.println("No. of test cases: " + cases.size() + ".");
                 System.out.println();
 
-                Search search = new RandomSearch();
+                Search search = new GeneticAlgorithmSearch();
                 search.search(properties, cases);
+             }
             }
         }
     }

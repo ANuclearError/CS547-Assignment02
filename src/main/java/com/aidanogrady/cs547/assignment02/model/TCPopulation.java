@@ -63,13 +63,15 @@ public class TCPopulation {
         this.crossover = Double.parseDouble(properties.getProperty("ga.crossover"));
         this.mutation = Double.parseDouble(properties.getProperty("ga.mutation"));
         this.tournament = Integer.parseInt(properties.getProperty("ga.tournament"));
-        this.setSize = Integer.parseInt(properties.getProperty("numberOfTests"));
+        this.setSize = Integer.parseInt(properties.getProperty("size"));
 
         this.population = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             population.add(TCChromosome.generateChromosome(setSize, testCases));
         }
         Collections.sort(population);
+
+        random = new Random();
     }
 
     /**
@@ -140,6 +142,7 @@ public class TCPopulation {
             }
         }
         population = nextGen;
+        Collections.sort(population);
     }
 
     /**
