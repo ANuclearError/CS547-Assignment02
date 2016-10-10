@@ -43,7 +43,25 @@ public class TCChromosome implements Comparable<TCChromosome> {
      * @return fitness
      */
     private double calculateFitness() {
-        return 0.0;
+        double fitness = 1.0;
+
+        int faults = candidate.get(0).getNumOfFaults();
+
+        double sum = 0;
+        for (int i = 1; i <= faults; i++) {
+            int fit = 1;
+            for (TestCase tc : candidate) {
+                if (tc.getFaults().contains(i)) {
+                    break;
+                }
+                fit++;
+            }
+            fit = fit % (candidate.size() + 1);
+            sum += fit;
+        }
+        fitness -= sum / (faults * candidate.size());
+        fitness += 1.0 / (2 * candidate.size());
+        return 1.0 - fitness;
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.aidanogrady.cs547.assignment02;
 
+import com.aidanogrady.cs547.assignment02.model.TCChromosome;
 import com.aidanogrady.cs547.assignment02.model.TestCase;
 
 import java.io.FileInputStream;
