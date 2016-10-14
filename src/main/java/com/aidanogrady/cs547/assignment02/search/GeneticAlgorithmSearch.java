@@ -22,14 +22,22 @@ public class GeneticAlgorithmSearch implements Search {
 
     @Override
     public Result search(Properties props, List<TestCase> cases) {
+        int limit = Integer.parseInt(props.getProperty("ga.limit"));
+
         TCPopulation population = new TCPopulation(props, cases);
 
         TCChromosome best = population.getFittest();
 
         int generations = 1;
+        int stalls = 0;
         LOGGER.info("Generation " + generations + ". " + best);
-        while (best.getFitness() > 0) {
+        while (best.getFitness() > 0 && stalls < limit) {
             population.evolve();
+
+            if (population.getFittest().getFitness() == best.getFitness())
+                stalls++;
+            else if (population.getFittest().getFitness() < best.getFitness())
+                stalls = 0;
             best = population.getFittest();
             generations++;
             LOGGER.info("Generation " + generations + ". Best: " + best + " Average: " + population.getAverageFitness());
