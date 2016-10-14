@@ -48,7 +48,6 @@ public class Application {
 
                 Search search = new GeneticAlgorithmSearch();
                 search.search(properties, cases);
-             }
             }
         }
     }
