@@ -116,16 +116,14 @@ public class TCChromosome implements Comparable<TCChromosome> {
      *
      * @return randomly altered chromosome
      */
-    public TCChromosome mutate() {
+    public TCChromosome mutate(List<TestCase> testCases) {
         List<TestCase> copy = new ArrayList<>(candidate);
 
         int i = RAND.nextInt(candidate.size() - 1);
-        int j = i;
-        while (i == j)
-            j = RAND.nextInt(candidate.size() - 1);
-        TestCase temp = copy.get(i);
-        copy.set(i, copy.get(j));
-        copy.set(j, temp);
+        TestCase newTestCase = testCases.get(RAND.nextInt(testCases.size()));
+        while (copy.contains(newTestCase))
+            newTestCase = testCases.get(RAND.nextInt(testCases.size()));
+        copy.set(i, newTestCase);
 
         return new TCChromosome(copy);
     }

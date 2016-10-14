@@ -12,6 +12,11 @@ import java.util.*;
  */
 public class TCPopulation {
     /**
+     * The list of test cases to use to create chromosomes.
+     */
+    private List<TestCase> testCases;
+
+    /**
      * The population
      */
     private List<TCChromosome> population;
@@ -58,6 +63,7 @@ public class TCPopulation {
      * @param testCases the test cases to be used in generation chromosomes
      */
     public TCPopulation(Properties properties, List<TestCase> testCases) {
+        this.testCases = testCases;
         this.size = Integer.parseInt(properties.getProperty("ga.population"));
         this.elitism = Double.parseDouble(properties.getProperty("ga.elitism"));
         this.crossover = Double.parseDouble(properties.getProperty("ga.crossover"));
@@ -129,11 +135,11 @@ public class TCPopulation {
             }
 
             if (random.nextDouble() < mutation) {
-                son = son.mutate();
+                son = son.mutate(testCases);
             }
 
             if (random.nextDouble() < mutation) {
-                daughter = daughter.mutate();
+                daughter = daughter.mutate(testCases);
             }
 
             nextGen.add(son);
