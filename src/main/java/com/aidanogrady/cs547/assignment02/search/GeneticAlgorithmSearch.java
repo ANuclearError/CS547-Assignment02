@@ -30,7 +30,7 @@ public class GeneticAlgorithmSearch implements Search {
 
         int generations = 1;
         int stalls = 0;
-        LOGGER.info("Generation " + generations + ". " + best);
+        LOGGER.debug("Generation " + generations + ". " + best);
         while (best.getFitness() > 0 && stalls < limit) {
             population.evolve();
 
@@ -40,7 +40,7 @@ public class GeneticAlgorithmSearch implements Search {
                 stalls = 0;
             best = population.getFittest();
             generations++;
-            LOGGER.info("Generation " + generations + ". Best: " + best + " Average: " + population.getAverageFitness());
+            LOGGER.debug("Generation " + generations + ". Best: " + best + " Average: " + population.getAverageFitness());
         }
         return new GAResult(best, generations);
     }

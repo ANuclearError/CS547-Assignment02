@@ -31,7 +31,7 @@ public class RandomSearch implements Search {
             TCChromosome next = TCChromosome.generateChromosome(setSize, cases);
             if (best == null || best.getFitness() > next.getFitness()) {
                 best = next;
-                LOGGER.info(i + ". new best: " + best);
+                LOGGER.debug(i + ". new best: " + best);
             }
         }
         return new RandomResult(best, i);

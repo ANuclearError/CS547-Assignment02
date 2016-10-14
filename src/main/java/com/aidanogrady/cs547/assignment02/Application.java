@@ -6,6 +6,8 @@ import com.aidanogrady.cs547.assignment02.search.GeneticAlgorithmSearch;
 import com.aidanogrady.cs547.assignment02.search.HillClimbingSearch;
 import com.aidanogrady.cs547.assignment02.search.RandomSearch;
 import com.aidanogrady.cs547.assignment02.search.Search;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,6 +28,8 @@ import java.util.regex.Pattern;
  * @since 0.0
  */
 public class Application {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args) {
         System.out.println("CS547 Assignment 01: Introductory Exercise");
         System.out.println("Author: Aidan O'Grady (201218150)");
@@ -46,9 +50,8 @@ public class Application {
                 System.out.println("No. of test cases: " + cases.size() + ".");
                 System.out.println();
 
-                Search search = new HillClimbingSearch();
-                search.search(properties, cases);
-
+                Search search = new GeneticAlgorithmSearch();
+                search.benchmark(properties, cases);
             }
         }
     }

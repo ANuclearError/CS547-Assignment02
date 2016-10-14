@@ -23,16 +23,17 @@ public class HillClimbingSearch implements Search {
     public Result search(Properties props, List<TestCase> cases) {
         int limit = Integer.parseInt(props.getProperty("stall"));
         int setSize = Integer.parseInt(props.getProperty("size"));
+        int steps = Integer.parseInt(props.getProperty("hillclimb.steps"));
 
         int climbs = 1;
         int restarts = 0;
 
         TCChromosome best = TCChromosome.generateChromosome(setSize, cases);
-        LOGGER.info(climbs + ". Best: " + best);
+        LOGGER.debug(climbs + ". Best: " + best);
         while (best.getFitness() > 0) {
             climbs++;
 
-            List<TCChromosome> neighbours = best.getNeighbours(cases);
+            List<TCChromosome> neighbours = best.getNeighbours(cases, steps);
             boolean plateau = true;
 
             for (TCChromosome n : neighbours) {
@@ -56,9 +57,9 @@ public class HillClimbingSearch implements Search {
                 if (attempts == 15)
                     return new HillClimbingResult(best, climbs, restarts);
                 restarts++;
-                LOGGER.info(climbs + ". restart number " + restarts);
+                LOGGER.debug(climbs + ". restart number " + restarts);
             } else {
-                LOGGER.info(climbs + ". new best: " + best);
+                LOGGER.debug(climbs + ". new best: " + best);
             }
         }
 
