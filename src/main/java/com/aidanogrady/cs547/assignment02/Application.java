@@ -46,8 +46,9 @@ public class Application {
                 System.out.println("No. of test cases: " + cases.size() + ".");
                 System.out.println();
 
-                Search search = new GeneticAlgorithmSearch();
+                Search search = new HillClimbingSearch();
                 search.search(properties, cases);
+
             }
         }
     }

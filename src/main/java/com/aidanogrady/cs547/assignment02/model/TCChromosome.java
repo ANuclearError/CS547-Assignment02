@@ -133,14 +133,13 @@ public class TCChromosome implements Comparable<TCChromosome> {
      *
      * @return neighbours
      */
-    public List<TCChromosome> getNeighbours() {
+    public List<TCChromosome> getNeighbours(List<TestCase> testCases) {
         List<TCChromosome> neighbours = new ArrayList<>();
         for (int i = 0; i < candidate.size(); i++) {
-            for (int j = i+1; j < candidate.size(); j++) {
+            for (TestCase tc : testCases) {
                 List<TestCase> copy = new ArrayList<>(candidate);
-                TestCase temp = copy.get(i);
-                copy.set(i, copy.get(j));
-                copy.set(j, temp);
+                if (!copy.contains(tc))
+                    copy.set(i, tc);
                 neighbours.add(new TCChromosome(copy));
             }
         }

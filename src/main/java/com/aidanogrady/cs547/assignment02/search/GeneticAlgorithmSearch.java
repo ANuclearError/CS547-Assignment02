@@ -22,7 +22,7 @@ public class GeneticAlgorithmSearch implements Search {
 
     @Override
     public Result search(Properties props, List<TestCase> cases) {
-        int limit = Integer.parseInt(props.getProperty("ga.limit"));
+        int limit = Integer.parseInt(props.getProperty("stall"));
 
         TCPopulation population = new TCPopulation(props, cases);
 
