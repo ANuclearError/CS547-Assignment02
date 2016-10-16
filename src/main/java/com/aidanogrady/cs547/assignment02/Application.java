@@ -50,8 +50,14 @@ public class Application {
                 System.out.println("No. of test cases: " + cases.size() + ".");
                 System.out.println();
 
-                Search search = new GeneticAlgorithmSearch();
-                search.benchmark(properties, cases);
+                Search[] searches = new Search[3];
+                searches[0] = new RandomSearch();
+                searches[1] = new HillClimbingSearch();
+                searches[2] = new GeneticAlgorithmSearch();
+                for (Search search : searches) {
+                    search.benchmark(properties, cases);
+                    System.out.println();
+                }
             }
         }
     }

@@ -48,7 +48,7 @@ public class GeneticAlgorithmSearch implements Search {
     @Override
     public void benchmark(Properties props, List<TestCase> cases) {
         int runs = Integer.parseInt(props.getProperty("benchmark"));
-        LOGGER.info("Starting HillClimb benchmark");
+        LOGGER.info("Starting GeneticAlgorithmSearch benchmark");
 
         double totalFitness = 0.0;
         long totalTime = 0;
@@ -70,7 +70,7 @@ public class GeneticAlgorithmSearch implements Search {
 
             LOGGER.info("Finished run " + i + " in " + time + "ms");
             LOGGER.info("Result took " + result.generations + " generations.");
-            LOGGER.info("Result: " + result);
+            LOGGER.info("Result: " + result.result);
         }
         LOGGER.info("Finished GeneticAlgorithmSearch benchmark");
 

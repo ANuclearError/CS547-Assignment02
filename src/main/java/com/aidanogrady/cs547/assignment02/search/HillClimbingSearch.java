@@ -91,7 +91,7 @@ public class HillClimbingSearch implements Search {
 
             LOGGER.info("Finished run " + i + " in " + time + "ms");
             LOGGER.info("Result took " + result.climbs + " climbs and " + result.restarts + " restarts.");
-            LOGGER.info("Result: " + result);
+            LOGGER.info("Result: " + result.result);
         }
         LOGGER.info("Finished HillClimbingSearch benchmark");
 

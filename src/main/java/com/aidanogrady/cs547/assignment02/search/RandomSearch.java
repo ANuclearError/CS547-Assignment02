@@ -59,7 +59,7 @@ public class RandomSearch implements Search {
 
             LOGGER.info("Finished run " + i + " in " + time + "ms");
             LOGGER.info("Search took " + result.runs + " attempts");
-            LOGGER.info("Result: " + result);
+            LOGGER.info("Result: " + result.result);
         }
         LOGGER.info("Finished RandomSearch benchmark");
 
