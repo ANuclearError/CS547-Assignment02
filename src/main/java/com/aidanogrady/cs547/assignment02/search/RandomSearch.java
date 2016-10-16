@@ -25,16 +25,18 @@ public class RandomSearch implements Search {
 
         TCChromosome best = null;
         int i = 0;
+        int bestRun = 0;
         while (i <= limit && (best == null || best.getFitness() > 0)) {
             i++;
 
             TCChromosome next = TCChromosome.generateChromosome(setSize, cases);
             if (best == null || best.getFitness() > next.getFitness()) {
                 best = next;
+                bestRun = i;
                 LOGGER.debug(i + ". new best: " + best);
             }
         }
-        return new RandomResult(best, i);
+        return new RandomResult(best, bestRun);
     }
 
     @Override

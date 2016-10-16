@@ -42,6 +42,7 @@ public class GeneticAlgorithmSearch implements Search {
             generations++;
             LOGGER.debug("Generation " + generations + ". Best: " + best + " Average: " + population.getAverageFitness());
         }
+        generations -= stalls;
         return new GAResult(best, generations);
     }
 
