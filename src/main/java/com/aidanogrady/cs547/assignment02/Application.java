@@ -15,9 +15,7 @@ import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,7 +67,7 @@ public class Application {
      * @return list of test cases from file if valid, otherwise null
      */
     private static List<TestCase> readTestCasesFromFile(String filePath) {
-        List<TestCase> list = new ArrayList<>();
+        Set<TestCase> set = new HashSet<>();
 
         String content;
         try {
@@ -94,9 +92,9 @@ public class Application {
                 if (Integer.parseInt(nextCase[(i + 1) * 2]) > 0)
                     faults.add(i + 1);
             }
-            list.add(new TestCase(nextCase[0], faults, length));
+            set.add(new TestCase(nextCase[0], faults, length));
         }
-        return list;
+        return new ArrayList<>(set);
     }
 
     /**

@@ -98,4 +98,23 @@ public class TestCase {
     public String toString() {
         return testName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TestCase testCase = (TestCase) o;
+
+        if (numOfFaults != testCase.numOfFaults) return false;
+        return faults != null ? faults.equals(testCase.faults) : testCase.faults == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = faults != null ? faults.hashCode() : 0;
+        result = 31 * result + numOfFaults;
+        return result;
+    }
 }
