@@ -1,0 +1,89 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[parfill]{parskip}
+\usepackage{url}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\title{CS547 Advanced Topics in Computer Science\\
+\large{Assignment 02 - Test Case Prioritisation}}
+\author{Aidan O'Grady - 201218150}
+\date{}
+\maketitle
+
+\section{Overview}
+The task given was to implement a genetic algorithm and hill climber for the
+purposes of solving the test case prioritisation problem. We were provided two
+files containing test case data to be prioritised, one small and one large. In
+addition, a base line random search was also required to act as a baseline
+comparison for the other search implementations.
+
+\section{Problem Representation}
+The TestCase class was created to contain the data that was read from the files,
+containing the list of faults found by the test as well the potential number of
+tests that could be found. This allowed for the coverage of that test to also
+be contained.
+
+The TCChromosome class is the class used by the search algorithms, containing
+the fitness function, crossover and mutation methods that are required for
+the search algorithms. The TCChromosome class (hereafter referred to as the
+Chromosome class) stores a List of TestCases that is the candidate. A List was
+chosen to allow for easier manipulation of the candidate in cases of crossover
+and mutation, since cases could easily be swapped and changed for other test
+cases.
+
+\subsection{Fitness Function}
+The fitness function utilised is a slightly modified version of the APFD measure
+outlined by Elbaum et al \cite[Section~4.1]{Elbaum:2002:TCP:506201.506205}.
+While their implementation ranges from 0 to 1 (being a percentage calculation),
+my solution is inverted, meaning that a fitness function of 0 would be the best
+outcome. This was done to allow for my search algorithms to have an
+understandable terminate condition by comparing the fitness values to 0. 
+
+In addition, my fitness function can break beyond the range of APFD. This occurs
+when a fault is not found within any of the test cases within the candidate, due
+to the summation that occurs within the fitness function calculation. In
+addition, due to the need for better results to have a lower fitness value, the
+APFD is deducted from 1 to ensure this.
+
+\subsection{Crossover Method}
+The choice for crossover was taken from Harman et al
+\cite[Section~5.1]{Harman:2012:SSE:2379776.2379787}. Crossover is contained in
+the Chromosome class, taking in the other parent and index as parameters. The
+original Chromosome's list of test cases is copied into a new list up to the
+given index. This is followed by iterating through the other parent's list of
+cases, and inserting from it until the list is filled. This is then used to
+create and return a new chromosome.
+
+\subsection{Mutation Method and Neighbourhood}
+The mutation method and neighbourhood are very similar to each other, being used
+by Genetic Algorithm and Hill Climber respectably to progress in their searches,
+so it was natural to be consistent between them.
+
+The original method was by swapping test cases in the candidate, with both
+swapping adjacent test cases or any test cases being considered. However, I did
+not feel that this was a great solution to go with, since I felt that it not
+introducing new test cases meant that progress would be slower, increasing the
+number of random restarts in hill climbing for example.
+
+Walcott et al \cite[Figure~4a]{Walcott:2006:TTS:1146238.1146240} provided an
+alternative that I felt was more suitable to the problem at hand. Instead, a
+random test case in the list is replaced with a random test case from the pool
+of test cases. By using this method of mutation instead, I felt that the
+algorithms would be more effective.
+
+The neighbourhood function for hill climber is similar, although for each
+neighbour, it looks at the cases surrounding the case to be replaced in the
+pool of tests determined by the given size of step. For example, if the test
+case being replaced was number 150, and the step size was 10, then test cases
+140-149 and 151-160 would replace it for each neighbour.
+
+\section{Implementation}
+\section{Comparison}
+\subsection{Random Search}
+\subsection{Hill Climb Search}
+\subsection{Genetic Algorithm Search}
+
+\bibliographystyle{plain}
+\bibliography{report} 
+\end{document}

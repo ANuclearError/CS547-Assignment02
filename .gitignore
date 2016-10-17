@@ -13,3 +13,10 @@ buildNumber.properties
 log/
 *.jar
 *.zip
+
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.synctex.gz
