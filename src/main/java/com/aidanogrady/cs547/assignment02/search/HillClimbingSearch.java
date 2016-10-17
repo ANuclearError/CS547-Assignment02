@@ -58,6 +58,7 @@ public class HillClimbingSearch implements Search {
                     return new HillClimbingResult(best, climbs, restarts);
                 restarts++;
                 LOGGER.debug(climbs + ". restart number " + restarts);
+                LOGGER.debug(climbs + ". new best: " + best);
             } else {
                 LOGGER.debug(climbs + ". new best: " + best);
             }

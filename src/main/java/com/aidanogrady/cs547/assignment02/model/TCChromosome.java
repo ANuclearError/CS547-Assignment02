@@ -119,7 +119,7 @@ public class TCChromosome implements Comparable<TCChromosome> {
     public TCChromosome mutate(List<TestCase> testCases) {
         List<TestCase> copy = new ArrayList<>(candidate);
 
-        int i = RAND.nextInt(candidate.size() - 1);
+        int i = RAND.nextInt(copy.size() - 1);
         TestCase newTestCase = testCases.get(RAND.nextInt(testCases.size()));
         while (copy.contains(newTestCase))
             newTestCase = testCases.get(RAND.nextInt(testCases.size()));

@@ -46,7 +46,6 @@ public class Application {
             if (validateProperties(properties) && cases != null) {
                 System.out.println("Properties are valid, let's go!");
                 System.out.println("No. of test cases: " + cases.size() + ".");
-                System.out.println();
 
                 Search[] searches = new Search[3];
                 searches[0] = new RandomSearch();
@@ -67,6 +66,8 @@ public class Application {
      * @return list of test cases from file if valid, otherwise null
      */
     private static List<TestCase> readTestCasesFromFile(String filePath) {
+        // Set is being used to ensure that duplicate test cases are not added
+        // to the list, making searching easier.
         Set<TestCase> set = new HashSet<>();
 
         String content;
@@ -78,7 +79,8 @@ public class Application {
         }
 
         // Lovely regex to split file into each test case.
-        Pattern pattern = Pattern.compile("unitest[\\d+]+:\\s[v\\d+:\\s\\d]+");
+        String regex = "unitest[\\d+]+:\\s[v\\d+:\\s\\d]+";
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(content);
         while (matcher.find()) {
             // Compress whitespace and remove colons to allow easy manipulation.
