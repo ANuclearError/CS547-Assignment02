@@ -141,7 +141,19 @@ is added to ensure that if no better solution is found, the search terminates.
 
 \subsection{Genetic Algorithm}
 \label{sub:genetic_algorithm}
-Derp.
+The genetic algorithm is done utilising the \emph{TCPopulation} class. When the
+population evolves, the new population is taking from the top percentage of
+chromosomes, with the configuration file stating how elite to be. Parents are
+determined using tournament selection, with crossover and mutation being
+performed if they meet a check (defined in the configuration file).
+
+There will eventually reach a point where no improvements can be made, and the
+generations' best chromosome never changes. A limit is provided to help
+terminate the search. Every time the search doesn't improve, a counter is
+incremented. If the limit is reached, then the search is terminated, and the
+result is returned. The returned object takes the limit into account, meaning
+that if the limit was 250, then the result 250 generations that were spawned are
+ignored.
 
 \newpage
 \section{Comparison}
