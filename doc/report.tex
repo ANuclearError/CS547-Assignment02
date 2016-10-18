@@ -80,7 +80,17 @@ case being replaced was number 150, and the step size was 10, then test cases
 
 \section{Implementation}
 \subsection{Reading the Data}
-
+The format of the data files given to us was less than ideal. A regular
+expression was made to make the file parsing a lot easier, since I merely had to
+iterate upon the matches to the expression. When examining the data file, one
+feature that was of interest was the fact that there are many cases that were
+repeated. For example, in the small data file, unittest0 to unitest30 all had
+the exact same coverage. This meant that when performing the algorithms, there
+was the potential for waste in cases such as swapping two test cases that were
+the same. In order to combat this, the TestCase class ignores the name of the
+test when comparing between two objects, allowing for the file parsing to return
+a Set of TestCases rather than a List, greatly reducing the number of
+permutations possible for chromosomes.
 
 \subsection{Terminating Searches}
 In comparison to the `Hello World' exercise, the issue of terminating searches
