@@ -1,7 +1,15 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[parfill]{parskip}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{url}
+\usepackage{listings}
+
+\lstdefinestyle{snippet}{
+    numbers = left,
+    basicstyle = \ttfamily\footnotesize,
+    frame = single,
+    breaklines = true,
+}
 
 \setlength\parindent{0pt}
 
@@ -155,11 +163,75 @@ result is returned. The returned object takes the limit into account, meaning
 that if the limit was 250, then the result 250 generations that were spawned are
 ignored.
 
-\newpage
 \section{Comparison}
 \subsection{Random Search Results}
+\subsubsection{Small Data Set} % (fold)
+\label{ssub:random_small_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {47-51},
+	caption = {Random search, small data search},
+	label = {list:rs}
+]{results-small.txt} 
+% subsubsection random_small_data_set (end)
+
+\subsubsection{Large Data Set} % (fold)
+\label{ssub:random_large_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {47-51},
+	caption = {Random search, large data search},
+	label = {list:rl}
+]{results-large.txt} 
+% subsubsection random_large_data_set (end)
+
 \subsection{Hill Climb Search Results}
+\subsubsection{Small Data Set} % (fold)
+\label{ssub:hill_small_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {94-99},
+	caption = {Hill climb search, small data search},
+	label = {list:hs}
+]{results-small.txt} 
+% subsubsection hill_small_data_set (end)
+
+\subsubsection{Large Data Set} % (fold)
+\label{ssub:hill_large_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {94-99},
+	caption = {Hill climb search, large data search},
+	label = {list:hl}
+]{results-large.txt} 
+% subsubsection hill_large_data_set (end)
+
 \subsection{Genetic Algorithm Search Results}
+\subsubsection{Small Data Set} % (fold)
+\label{ssub:ga_small_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {142-146},
+	caption = {Genetic Algorithm search, small data search},
+	label = {list:gs}
+]{results-small.txt} 
+% subsubsection ga_small_data_set (end)
+
+\subsubsection{Large Data Set} % (fold)
+\label{ssub:ga_large_data_set}
+\lstinputlisting[
+	style = snippet,
+	firstnumber = 1,
+	linerange = {142-146},
+	caption = {Genetic Algorithm search, large data search},
+	label = {list:gl}
+]{results-large.txt} 
+% subsubsection ga_large_data_set (end)
 
 \bibliographystyle{plain}
 \bibliography{report} 

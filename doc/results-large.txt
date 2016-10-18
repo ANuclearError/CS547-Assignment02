@@ -1,0 +1,146 @@
+CS547 Assignment 01: Introductory Exercise
+Author: Aidan O'Grady (201218150)
+
+Properties are valid, let's go!
+No. of test cases: 112.
+Starting RandomSearch benchmark
+Starting run 1
+Finished run 1 in 20130ms
+Search took 1081264 attempts
+Result: [unitest1042, unitest1075, unitest1014, unitest10369, unitest10129, unitest10036, unitest10145, unitest10479, unitest10057, unitest10124, unitest10375, unitest10119, unitest1044, unitest10044, unitest1027] (0.3649122807017544)
+Starting run 2
+Finished run 2 in 19785ms
+Search took 1567028 attempts
+Result: [unitest1083, unitest10133, unitest10371, unitest10034, unitest10057, unitest10479, unitest10367, unitest1080, unitest10365, unitest10043, unitest10143, unitest10379, unitest1002, unitest10363, unitest10042] (0.3666666666666667)
+Starting run 3
+Finished run 3 in 19412ms
+Search took 83227 attempts
+Result: [unitest1083, unitest10057, unitest1014, unitest1012, unitest10146, unitest10388, unitest10479, unitest10383, unitest10369, unitest103, unitest10121, unitest10419, unitest10366, unitest10145, unitest10037] (0.36140350877192984)
+Starting run 4
+Finished run 4 in 19149ms
+Search took 99597 attempts
+Result: [unitest1014, unitest10383, unitest10057, unitest1075, unitest10138, unitest1015, unitest1033, unitest10048, unitest1059, unitest10380, unitest1036, unitest10123, unitest10120, unitest10365, unitest10034] (0.368421052631579)
+Starting run 5
+Finished run 5 in 20237ms
+Search took 65393 attempts
+Result: [unitest1083, unitest1014, unitest1022, unitest10383, unitest10122, unitest10057, unitest1040, unitest10044, unitest1001, unitest10056, unitest10038, unitest10141, unitest1, unitest1002, unitest10055] (0.37017543859649116)
+Starting run 6
+Finished run 6 in 20425ms
+Search took 1717632 attempts
+Result: [unitest1042, unitest1014, unitest1044, unitest1033, unitest1075, unitest10057, unitest10419, unitest10053, unitest10132, unitest1080, unitest10124, unitest1038, unitest10143, unitest1059, unitest10133] (0.3649122807017544)
+Starting run 7
+Finished run 7 in 22116ms
+Search took 1434972 attempts
+Result: [unitest1014, unitest10057, unitest1083, unitest103, unitest10128, unitest1027, unitest1036, unitest10379, unitest10136, unitest1060, unitest10419, unitest10363, unitest10135, unitest10044, unitest1008] (0.3631578947368421)
+Starting run 8
+Finished run 8 in 22309ms
+Search took 186956 attempts
+Result: [unitest10371, unitest10047, unitest10057, unitest10133, unitest10419, unitest10383, unitest1015, unitest10143, unitest1036, unitest10377, unitest0, unitest10362, unitest10123, unitest1078, unitest10385] (0.368421052631579)
+Starting run 9
+Finished run 9 in 21484ms
+Search took 1531122 attempts
+Result: [unitest10057, unitest1014, unitest1083, unitest1076, unitest10139, unitest10383, unitest10145, unitest1078, unitest10034, unitest10055, unitest10047, unitest10381, unitest1019, unitest10, unitest1001] (0.36140350877192984)
+Starting run 10
+Finished run 10 in 19742ms
+Search took 17510 attempts
+Result: [unitest10124, unitest1014, unitest10383, unitest1042, unitest10057, unitest1083, unitest10041, unitest100, unitest10043, unitest10379, unitest10, unitest10050, unitest10038, unitest1005, unitest1053] (0.3771929824561403)
+Finished RandomSearch benchmark
+Average fitness: 0.3666666666666666
+Average attempts: 778470.1
+Total time: 204789 ms
+Average time: 20478 ms
+
+Starting HillClimb benchmark
+Starting run 1
+Finished run 1 in 44454ms
+Result took 11 climbs and 1 restarts.
+Result: [unitest1014, unitest10383, unitest10057, unitest1083, unitest10141, unitest10419, unitest10139, unitest1080, unitest10053, unitest10037, unitest10362, unitest10042, unitest10120, unitest1006, unitest1075] (0.34912280701754395)
+Starting run 2
+Finished run 2 in 25320ms
+Result took 8 climbs and 0 restarts.
+Result: [unitest1008, unitest103, unitest10057, unitest1083, unitest10055, unitest10036, unitest10130, unitest10050, unitest103, unitest10419, unitest10048, unitest1080, unitest10380, unitest1022, unitest1027] (0.368421052631579)
+Starting run 3
+Finished run 3 in 30161ms
+Result took 11 climbs and 1 restarts.
+Result: [unitest1083, unitest1008, unitest10057, unitest1080, unitest10123, unitest10133, unitest10375, unitest10127, unitest1029, unitest1024, unitest1076, unitest10419, unitest10371, unitest1059, unitest10043] (0.36140350877192984)
+Starting run 4
+Finished run 4 in 24907ms
+Result took 8 climbs and 0 restarts.
+Result: [unitest10371, unitest1083, unitest1080, unitest10124, unitest1033, unitest10057, unitest1035, unitest10126, unitest10479, unitest1009, unitest10135, unitest10385, unitest10146, unitest1033, unitest10128] (0.35789473684210527)
+Starting run 5
+Finished run 5 in 32344ms
+Result took 14 climbs and 1 restarts.
+Result: [unitest10057, unitest10139, unitest1014, unitest1083, unitest10383, unitest10419, unitest10141, unitest10479, unitest10380, unitest10122, unitest10135, unitest0, unitest10043, unitest1027, unitest1041] (0.3508771929824561)
+Starting run 6
+Finished run 6 in 31188ms
+Result took 11 climbs and 1 restarts.
+Result: [unitest1083, unitest10057, unitest1014, unitest1080, unitest10479, unitest10146, unitest10139, unitest1078, unitest1003, unitest10123, unitest10055, unitest10385, unitest10381, unitest0, unitest10362] (0.3456140350877194)
+Starting run 7
+Finished run 7 in 26710ms
+Result took 8 climbs and 0 restarts.
+Result: [unitest10383, unitest10371, unitest10133, unitest1042, unitest10419, unitest1018, unitest1083, unitest10, unitest1002, unitest1003, unitest10057, unitest1014, unitest10149, unitest1036, unitest10381] (0.368421052631579)
+Starting run 8
+Finished run 8 in 24563ms
+Result took 8 climbs and 0 restarts.
+Result: [unitest10371, unitest10419, unitest1080, unitest10133, unitest10057, unitest1083, unitest1003, unitest1076, unitest10363, unitest10135, unitest10123, unitest1022, unitest1012, unitest1018, unitest10124] (0.3666666666666667)
+Starting run 9
+Finished run 9 in 24727ms
+Result took 8 climbs and 0 restarts.
+Result: [unitest1042, unitest10371, unitest1080, unitest10133, unitest10057, unitest10375, unitest10419, unitest10043, unitest1083, unitest1009, unitest10147, unitest10388, unitest1023, unitest1024, unitest10126] (0.3543859649122807)
+Starting run 10
+Finished run 10 in 25285ms
+Result took 10 climbs and 0 restarts.
+Result: [unitest1083, unitest1033, unitest10057, unitest1014, unitest1080, unitest10129, unitest10036, unitest10419, unitest1015, unitest10419, unitest1049, unitest1029, unitest1008, unitest1035, unitest10135] (0.35789473684210527)
+Finished HillClimbingSearch benchmark
+Average fitness: 0.35807017543859654
+Average climbs: 9
+Average restarts: 0
+Total time: 289659 ms
+Average time: 28965 ms
+
+Starting GeneticAlgorithmSearch benchmark
+Starting run 1
+Finished run 1 in 2153ms
+Result took 6 generations.
+Result: [unitest1083, unitest10057, unitest10122, unitest1014, unitest10479, unitest1080, unitest10129, unitest10367, unitest1017, unitest1076, unitest1038, unitest1005, unitest10038, unitest10139, unitest10379] (0.3438596491228071)
+Starting run 2
+Finished run 2 in 2131ms
+Result took 15 generations.
+Result: [unitest10371, unitest10057, unitest10133, unitest1083, unitest10383, unitest10419, unitest1078, unitest1021, unitest10127, unitest10146, unitest1012, unitest10052, unitest106, unitest1006, unitest1049] (0.3456140350877194)
+Starting run 3
+Finished run 3 in 2168ms
+Result took 23 generations.
+Result: [unitest10371, unitest1042, unitest1083, unitest10133, unitest10057, unitest10363, unitest10419, unitest10032, unitest1019, unitest10147, unitest10130, unitest10126, unitest10041, unitest1023, unitest10141] (0.3421052631578948)
+Starting run 4
+Finished run 4 in 1881ms
+Result took 7 generations.
+Result: [unitest10383, unitest1083, unitest1014, unitest10124, unitest10057, unitest10419, unitest10479, unitest10055, unitest10035, unitest1017, unitest101, unitest1080, unitest10121, unitest1007, unitest10042] (0.3456140350877194)
+Starting run 5
+Finished run 5 in 2067ms
+Result took 7 generations.
+Result: [unitest1014, unitest1042, unitest10369, unitest1083, unitest1038, unitest10479, unitest10125, unitest1080, unitest10363, unitest10131, unitest10449, unitest10037, unitest1002, unitest1033, unitest1076] (0.34736842105263166)
+Starting run 6
+Finished run 6 in 3414ms
+Result took 222 generations.
+Result: [unitest1083, unitest10057, unitest1014, unitest10122, unitest1080, unitest10419, unitest1015, unitest1023, unitest103, unitest10479, unitest1035, unitest1006, unitest1001, unitest1012, unitest1059] (0.33859649122807023)
+Starting run 7
+Finished run 7 in 2419ms
+Result took 58 generations.
+Result: [unitest1083, unitest1014, unitest10383, unitest10124, unitest10057, unitest10419, unitest10056, unitest1051, unitest10479, unitest10125, unitest10000, unitest0, unitest10363, unitest1022, unitest10369] (0.3403508771929825)
+Starting run 8
+Finished run 8 in 2287ms
+Result took 19 generations.
+Result: [unitest10057, unitest1014, unitest1042, unitest10479, unitest10139, unitest1083, unitest1080, unitest10365, unitest10388, unitest10051, unitest10036, unitest1009, unitest1049, unitest10363, unitest1027] (0.3526315789473684)
+Starting run 9
+Finished run 9 in 2314ms
+Result took 9 generations.
+Result: [unitest1014, unitest1042, unitest10057, unitest10139, unitest1083, unitest10036, unitest10479, unitest10419, unitest10138, unitest10128, unitest1033, unitest1006, unitest1017, unitest1053, unitest10362] (0.3421052631578948)
+Starting run 10
+Finished run 10 in 1952ms
+Result took 6 generations.
+Result: [unitest1014, unitest1042, unitest10057, unitest1083, unitest10119, unitest10479, unitest10383, unitest10043, unitest10035, unitest10121, unitest10131, unitest10141, unitest10122, unitest1080, unitest106] (0.3421052631578948)
+Finished GeneticAlgorithmSearch benchmark
+Average fitness: 0.34403508771929825
+Average generations: 37
+Total time: 22786 ms
+Average time: 2278 ms
