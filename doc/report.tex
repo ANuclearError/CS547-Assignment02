@@ -1,5 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[parfill]{parskip}
+\usepackage[margin=1in]{geometry}
 \usepackage{url}
 
 \setlength\parindent{0pt}
@@ -101,22 +102,18 @@ configuration have on calculating the fitness function, I felt that a raw
 fitness value to terminate on would be less than ideal. This meant that each
 search implementation needed to handle termination in their own way.
 
-For the case of random search, a limit on the number of searches was included
-in the Properties file required. For hill climbing, termination of the search
-was dependant on the random restart. There had to be a mechanism to ensure that
-the algorithm did not perform a random restart when it found the best solution.
-To ensure this, the random restart had to find a better solution than the one
-that triggered the restart, with a new limit added to the configuration file. If
-the random restart could not find an improvement within this new limit, then the
-hill climb ceased.
+\subsection{Interfaces}
+There are two interfaces that are utilised by all search algorithms. These are
+the \emph{Search} and \emph{Result} interfaces. The \emph{Search} interface
+provides definitions for the \emph{search} and \emph{benchmark} methods, while
+the \emph{Result} interface is an empty interface that was required so that the
+\emph{search} method mentioned would have consistency in the return.
 
-For the genetic algorithm, this same limit was again used. When evolving, the
-algorithm would compare the new best solution with the old, and if there was no
-change in fitness, a counter would increment. If this continued until the given
-limit, then the algorithm ceased. The result returned by the algorithm takes
-this stalling into account, meaning that the benchmarking comparison is not
-hindered by these additional generations that are mandatory for the search to
-cease.
+\subsection{Random Search}
+
+\subsection{Hill Climbing}
+
+\subsection{Genetic Algorithm}
 
 \section{Comparison}
 \subsection{Random Search}
