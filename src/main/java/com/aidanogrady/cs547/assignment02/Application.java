@@ -43,6 +43,7 @@ public class Application {
                 System.out.println(args[0] + " cannot be parsed.");
             }
             List<TestCase> cases = readTestCasesFromFile(args[1]);
+
             if (validateProperties(properties) && cases != null) {
                 System.out.println("Properties are valid, let's go!");
                 System.out.println("No. of test cases: " + cases.size() + ".");

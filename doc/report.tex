@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[parfill]{parskip}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.9in]{geometry}
 \usepackage{url}
 \usepackage{listings}
 
@@ -166,6 +166,9 @@ that if the limit was 250, then the result 250 generations that were spawned are
 ignored.
 
 \section{Comparison}
+Please note the detailed version of the following results can be found in the
+\emph{log} directory of the submission.
+
 \subsection{Configuration} % (fold)
 \label{sub:configuration}
 The following attributes were consistent across both the small and large data
@@ -286,7 +289,40 @@ generations to find this result, sometimes finding it immediately.
 
 \subsubsection{Large Data Set} % (fold)
 \label{ssub:large_data_set}
+The first thing to consider with the large data set file is that it is
+impossible to find a solution that finds all faults. There are numerous faults,
+such as v1, that are not found by any test case, causing the overall fitness of
+chromosomes to fall.
 
+Random searching clearly scales much worse compared to other algorithms. While
+the size of the chromosomes has tripled, the time taken for searches is 10 times
+worse compared to the small data set, meaning that it is very disadvantaged by
+the larger data set and chromosomes required. Random search finds an average
+fitness of 0.367.
+
+Hill Climbing performs admirably, while not scaling nicely either, it is still
+terminating the search very quickly, taking only 26ms to complete its search.
+However, the average fitness of this algorithm is marginally worse than Random
+search, being 0.368. This suggests that the Hill Climb is not adept at handling
+the larger search space, which is interesting to see. Again, the Hill Climb
+rarely, if ever, restarts, and makes very few climbs as well. I think that the
+Hill Climb algorithm has room for improvement.
+
+Finally, the Genetic Algorithm uses its sacrifice in speed to ensure a better
+result, finding an average fitness and time of 0.344 in 2401ms. The average
+number of generations is much greater than in the small data set, taking 31
+generations on average, with a larger population size being added as well. 
+Examining the results of the Genetic Algorithm closer, it is clear that the most
+faults found by a test case in this data set is 12, since the first test of
+each chromosome is one of these tests that finds 12 faults, showing that the
+fitness function is working as intended.
+
+Overall, I would say that the Genetic Algorithm performed best since the
+trade-off between search speed and result obtained meant that the best result
+was found in a reasonable time. The Hill Climber, on the other hand, is perhaps
+in need of tweaks to ensure that a better result is found. It is likely that the
+neighbourhood size needed tweaking to accommodate the larger set of test cases
+read from the file in order to improve performance.
 % subsubsection large_data_set (end)
 % subsection comparison_&_analysis (end)
 
