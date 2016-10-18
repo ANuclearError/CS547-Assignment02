@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[parfill]{parskip}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{url}
 \usepackage{listings}
 
@@ -124,7 +124,9 @@ There are two interfaces that are utilised by all search algorithms. These are
 the \emph{Search} and \emph{Result} interfaces. The \emph{Search} interface
 provides definitions for the \emph{search} and \emph{benchmark} methods, while
 the \emph{Result} interface is an empty interface that was required so that the
-\emph{search} method mentioned would have consistency in the return.
+\emph{search} method mentioned would have consistency in the return. Each search
+algorithm is contained in a class implementing the interface, \emph{RandomSearch,
+HillClimbingSearch} \& \emph{GeneticAlgorithmSearch}.
 
 \subsection{Random Search}
 \label{sub:random_search}
@@ -149,7 +151,7 @@ is added to ensure that if no better solution is found, the search terminates.
 
 \subsection{Genetic Algorithm}
 \label{sub:genetic_algorithm}
-The genetic algorithm is done utilising the \emph{TCPopulation} class. When the
+The genetic algorithm is assisted by the \emph{TCPopulation} class. When the
 population evolves, the new population is taking from the top percentage of
 chromosomes, with the configuration file stating how elite to be. Parents are
 determined using tournament selection, with crossover and mutation being
@@ -164,6 +166,27 @@ that if the limit was 250, then the result 250 generations that were spawned are
 ignored.
 
 \section{Comparison}
+\subsection{Configuration} % (fold)
+\label{sub:configuration}
+The following attributes were consistent across both the small and large data
+set benchmarks:
+\begin{itemize}
+	\item number of runs in benchmark: 10
+	\item Random search limit: 2000000
+	\item Stall limit: 250
+	\item Hill climb steps size: 10
+	\item Genetic algorithm elitism rate: 0.2
+	\item Genetic algorithm crossover rate: 0.99
+	\item Genetic algorithm mutation rate: 0.1
+	\item Genetic algorithm tournament size: 0.2
+\end{itemize}
+
+The size of population for the genetic algorithm was 100 for the small data set
+and 1000 for the large data set. The size of permutations for the list of
+\emph{TestCase}s in the chromosomes was 5 for the small data set, and 15 for the
+large.
+
+% subsection configuration (end)
 \subsection{Random Search Results}
 \subsubsection{Small Data Set} % (fold)
 \label{ssub:random_small_data_set}
@@ -232,6 +255,40 @@ ignored.
 	label = {list:gl}
 ]{results-large.txt} 
 % subsubsection ga_large_data_set (end)
+
+\subsection{Comparison \& Analysis} % (fold)
+\label{sub:comparison_&_analysis}
+\subsubsection{Small Data Set} % (fold)
+\label{ssub:small_data_set}
+In the case of the smaller data set, all algorithms are successful in finding
+the best solution, with them all matching in terms of average fitness. Since
+there are only 9 unique test cases, there are 126 possible permutations of
+size 5. This means that it would be very difficult to not find the result. 
+
+While all searches do find the result, there is a clear difference in the time
+taken to reach the solution. Hill Climbing is the fastest search algorithm,
+taking an average of just 1ms to find the best result, while Genetic Algorithm
+takes 52ms to complete the search. This is still much faster than Random Search
+and it's 2.3 second search, although this will be due to the lack of ability to
+terminate quickly, since it much do the search a constant number of times.
+
+Despite there only being 126 possible chromosomes that can be found, the
+Random search algorithm still needed almost 5 times as many attempts to find it,
+showing the pitfall of it as a search method. Meanwhile, the Hill Climber would
+only require 5 climbs to find its result, with it not even managing to average
+more than 1 restart, this is likely due to the small neighbourhood found with
+this dataset, meaning it is much easier to find improved solutions.
+
+With genetic algorithm search, since the population size is almost the total
+number of permutations, it is not surprising that it would only need around two
+generations to find this result, sometimes finding it immediately.
+% subsubsection small_data_set (end)
+
+\subsubsection{Large Data Set} % (fold)
+\label{ssub:large_data_set}
+
+% subsubsection large_data_set (end)
+% subsection comparison_&_analysis (end)
 
 \bibliographystyle{plain}
 \bibliography{report} 

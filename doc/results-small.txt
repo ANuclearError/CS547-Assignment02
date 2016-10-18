@@ -5,142 +5,142 @@ Properties are valid, let's go!
 No. of test cases: 9.
 Starting RandomSearch benchmark
 Starting run 1
-Finished run 1 in 3076ms
-Search took 119 attempts
-Result: [unitest35, unitest150, unitest147, unitest144, unitest93] (0.23333333333333328)
+Finished run 1 in 2696ms
+Search took 363 attempts
+Result: [unitest35, unitest144, unitest147, unitest150, unitest36] (0.23333333333333328)
 Starting run 2
-Finished run 2 in 2181ms
-Search took 195 attempts
-Result: [unitest35, unitest144, unitest150, unitest147, unitest93] (0.23333333333333328)
+Finished run 2 in 2205ms
+Search took 833 attempts
+Result: [unitest35, unitest150, unitest144, unitest147, unitest30] (0.23333333333333328)
 Starting run 3
-Finished run 3 in 2166ms
-Search took 149 attempts
-Result: [unitest35, unitest150, unitest144, unitest147, unitest0] (0.23333333333333328)
+Finished run 3 in 2155ms
+Search took 189 attempts
+Result: [unitest35, unitest150, unitest147, unitest144, unitest92] (0.23333333333333328)
 Starting run 4
-Finished run 4 in 2077ms
-Search took 831 attempts
-Result: [unitest35, unitest150, unitest144, unitest147, unitest0] (0.23333333333333328)
-Starting run 5
-Finished run 5 in 2078ms
-Search took 326 attempts
-Result: [unitest35, unitest147, unitest150, unitest144, unitest30] (0.23333333333333328)
-Starting run 6
-Finished run 6 in 2544ms
-Search took 112 attempts
+Finished run 4 in 2102ms
+Search took 190 attempts
 Result: [unitest35, unitest144, unitest150, unitest147, unitest36] (0.23333333333333328)
+Starting run 5
+Finished run 5 in 2093ms
+Search took 334 attempts
+Result: [unitest35, unitest144, unitest147, unitest150, unitest93] (0.23333333333333328)
+Starting run 6
+Finished run 6 in 2200ms
+Search took 257 attempts
+Result: [unitest35, unitest147, unitest144, unitest150, unitest92] (0.23333333333333328)
 Starting run 7
-Finished run 7 in 2120ms
-Search took 228 attempts
-Result: [unitest35, unitest147, unitest150, unitest144, unitest30] (0.23333333333333328)
+Finished run 7 in 2310ms
+Search took 609 attempts
+Result: [unitest35, unitest144, unitest147, unitest150, unitest93] (0.23333333333333328)
 Starting run 8
-Finished run 8 in 2256ms
-Search took 387 attempts
-Result: [unitest35, unitest144, unitest147, unitest150, unitest0] (0.23333333333333328)
+Finished run 8 in 2259ms
+Search took 177 attempts
+Result: [unitest35, unitest150, unitest144, unitest147, unitest30] (0.23333333333333328)
 Starting run 9
-Finished run 9 in 2232ms
-Search took 244 attempts
-Result: [unitest35, unitest150, unitest147, unitest144, unitest0] (0.23333333333333328)
+Finished run 9 in 2136ms
+Search took 1579 attempts
+Result: [unitest35, unitest150, unitest144, unitest147, unitest36] (0.23333333333333328)
 Starting run 10
-Finished run 10 in 2279ms
-Search took 243 attempts
-Result: [unitest35, unitest144, unitest150, unitest147, unitest92] (0.23333333333333328)
+Finished run 10 in 2172ms
+Search took 1659 attempts
+Result: [unitest35, unitest147, unitest144, unitest150, unitest30] (0.23333333333333328)
 Finished RandomSearch benchmark
 Average fitness: 0.23333333333333334
-Average attempts: 283.4
-Total time: 23009 ms
-Average time: 2300 ms
+Average attempts: 619.0
+Total time: 22328 ms
+Average time: 2232 ms
 
 Starting HillClimb benchmark
 Starting run 1
-Finished run 1 in 2797ms
-Result took 4 climbs and 0 restarts.
-Result: [unitest35, unitest147, unitest144, unitest150, unitest36] (0.23333333333333328)
+Finished run 1 in 2ms
+Result took 6 climbs and 1 restarts.
+Result: [unitest35, unitest147, unitest144, unitest150, unitest0] (0.23333333333333328)
 Starting run 2
-Finished run 2 in 2831ms
+Finished run 2 in 0ms
 Result took 6 climbs and 0 restarts.
-Result: [unitest35, unitest150, unitest144, unitest147, unitest147] (0.23333333333333328)
+Result: [unitest35, unitest144, unitest147, unitest150, unitest150] (0.23333333333333328)
 Starting run 3
-Finished run 3 in 2738ms
-Result took 4 climbs and 0 restarts.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest0] (0.23333333333333328)
+Finished run 3 in 1ms
+Result took 5 climbs and 0 restarts.
+Result: [unitest35, unitest144, unitest150, unitest147, unitest0] (0.23333333333333328)
 Starting run 4
-Finished run 4 in 3034ms
-Result took 6 climbs and 0 restarts.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest0] (0.23333333333333328)
-Starting run 5
-Finished run 5 in 3331ms
-Result took 5 climbs and 0 restarts.
-Result: [unitest35, unitest150, unitest147, unitest144, unitest0] (0.23333333333333328)
-Starting run 6
-Finished run 6 in 2690ms
-Result took 5 climbs and 0 restarts.
-Result: [unitest35, unitest147, unitest150, unitest144, unitest0] (0.23333333333333328)
-Starting run 7
-Finished run 7 in 2744ms
+Finished run 4 in 2ms
 Result took 6 climbs and 0 restarts.
 Result: [unitest35, unitest144, unitest150, unitest147, unitest147] (0.23333333333333328)
-Starting run 8
-Finished run 8 in 2737ms
-Result took 5 climbs and 0 restarts.
-Result: [unitest35, unitest147, unitest150, unitest144, unitest144] (0.23333333333333328)
-Starting run 9
-Finished run 9 in 3123ms
-Result took 5 climbs and 0 restarts.
+Starting run 5
+Finished run 5 in 1ms
+Result took 6 climbs and 1 restarts.
+Result: [unitest35, unitest144, unitest150, unitest147, unitest93] (0.23333333333333328)
+Starting run 6
+Finished run 6 in 1ms
+Result took 6 climbs and 0 restarts.
 Result: [unitest35, unitest150, unitest147, unitest144, unitest36] (0.23333333333333328)
+Starting run 7
+Finished run 7 in 1ms
+Result took 5 climbs and 1 restarts.
+Result: [unitest35, unitest144, unitest150, unitest147, unitest92] (0.23333333333333328)
+Starting run 8
+Finished run 8 in 2ms
+Result took 5 climbs and 0 restarts.
+Result: [unitest35, unitest150, unitest144, unitest147, unitest147] (0.23333333333333328)
+Starting run 9
+Finished run 9 in 1ms
+Result took 5 climbs and 0 restarts.
+Result: [unitest35, unitest144, unitest147, unitest150, unitest150] (0.23333333333333328)
 Starting run 10
-Finished run 10 in 2966ms
-Result took 3 climbs and 0 restarts.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest35] (0.23333333333333328)
+Finished run 10 in 1ms
+Result took 5 climbs and 1 restarts.
+Result: [unitest35, unitest147, unitest150, unitest144, unitest36] (0.23333333333333328)
 Finished HillClimbingSearch benchmark
 Average fitness: 0.23333333333333334
-Average climbs: 4
+Average climbs: 5
 Average restarts: 0
-Total time: 28991 ms
-Average time: 2899 ms
+Total time: 12 ms
+Average time: 1 ms
 
 Starting GeneticAlgorithmSearch benchmark
 Starting run 1
-Finished run 1 in 135ms
+Finished run 1 in 87ms
 Result took 2 generations.
 Result: [unitest35, unitest147, unitest150, unitest144, unitest0] (0.23333333333333328)
 Starting run 2
-Finished run 2 in 60ms
-Result took 2 generations.
-Result: [unitest35, unitest147, unitest144, unitest150, unitest36] (0.23333333333333328)
-Starting run 3
-Finished run 3 in 138ms
+Finished run 2 in 45ms
 Result took 1 generations.
-Result: [unitest35, unitest150, unitest144, unitest147, unitest36] (0.23333333333333328)
-Starting run 4
-Finished run 4 in 85ms
-Result took 2 generations.
 Result: [unitest35, unitest150, unitest147, unitest144, unitest36] (0.23333333333333328)
+Starting run 3
+Finished run 3 in 56ms
+Result took 2 generations.
+Result: [unitest35, unitest144, unitest150, unitest147, unitest30] (0.23333333333333328)
+Starting run 4
+Finished run 4 in 65ms
+Result took 2 generations.
+Result: [unitest35, unitest147, unitest144, unitest150, unitest30] (0.23333333333333328)
 Starting run 5
-Finished run 5 in 47ms
+Finished run 5 in 44ms
+Result took 1 generations.
+Result: [unitest35, unitest144, unitest150, unitest147, unitest92] (0.23333333333333328)
+Starting run 6
+Finished run 6 in 41ms
+Result took 1 generations.
+Result: [unitest35, unitest150, unitest144, unitest147, unitest0] (0.23333333333333328)
+Starting run 7
+Finished run 7 in 33ms
+Result took 6 generations.
+Result: [unitest35, unitest147, unitest144, unitest150, unitest30] (0.23333333333333328)
+Starting run 8
+Finished run 8 in 33ms
 Result took 2 generations.
 Result: [unitest35, unitest147, unitest150, unitest144, unitest92] (0.23333333333333328)
-Starting run 6
-Finished run 6 in 43ms
-Result took 3 generations.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest93] (0.23333333333333328)
-Starting run 7
-Finished run 7 in 32ms
-Result took 2 generations.
-Result: [unitest35, unitest144, unitest150, unitest147, unitest36] (0.23333333333333328)
-Starting run 8
-Finished run 8 in 32ms
-Result took 8 generations.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest36] (0.23333333333333328)
 Starting run 9
-Finished run 9 in 54ms
-Result took 1 generations.
-Result: [unitest35, unitest144, unitest147, unitest150, unitest30] (0.23333333333333328)
-Starting run 10
-Finished run 10 in 53ms
+Finished run 9 in 62ms
 Result took 2 generations.
-Result: [unitest35, unitest147, unitest144, unitest150, unitest93] (0.23333333333333328)
+Result: [unitest35, unitest144, unitest150, unitest147, unitest93] (0.23333333333333328)
+Starting run 10
+Finished run 10 in 59ms
+Result took 3 generations.
+Result: [unitest35, unitest150, unitest144, unitest147, unitest93] (0.23333333333333328)
 Finished GeneticAlgorithmSearch benchmark
 Average fitness: 0.23333333333333334
 Average generations: 2
-Total time: 679 ms
-Average time: 67 ms
+Total time: 525 ms
+Average time: 52 ms
