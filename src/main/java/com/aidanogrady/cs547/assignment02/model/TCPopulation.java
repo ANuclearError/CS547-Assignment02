@@ -145,6 +145,7 @@ public class TCPopulation {
             nextGen.add(son);
             if (i != (size - 1)) { // Handle odd size pop
                 nextGen.add(daughter);
+                i++;
             }
         }
         population = nextGen;

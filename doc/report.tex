@@ -79,6 +79,35 @@ case being replaced was number 150, and the step size was 10, then test cases
 140-149 and 151-160 would replace it for each neighbour.
 
 \section{Implementation}
+\subsection{Reading the Data}
+
+
+\subsection{Terminating Searches}
+In comparison to the `Hello World' exercise, the issue of terminating searches
+was more complex due to the nature of the problem meaning that a fitness of 0
+was not guaranteed to be possible, meaning that the termination of searches had
+to be more sophisticated. In order to account for the impact the data set and
+configuration have on calculating the fitness function, I felt that a raw
+fitness value to terminate on would be less than ideal. This meant that each
+search implementation needed to handle termination in their own way.
+
+For the case of random search, a limit on the number of searches was included
+in the Properties file required. For hill climbing, termination of the search
+was dependant on the random restart. There had to be a mechanism to ensure that
+the algorithm did not perform a random restart when it found the best solution.
+To ensure this, the random restart had to find a better solution than the one
+that triggered the restart, with a new limit added to the configuration file. If
+the random restart could not find an improvement within this new limit, then the
+hill climb ceased.
+
+For the genetic algorithm, this same limit was again used. When evolving, the
+algorithm would compare the new best solution with the old, and if there was no
+change in fitness, a counter would increment. If this continued until the given
+limit, then the algorithm ceased. The result returned by the algorithm takes
+this stalling into account, meaning that the benchmarking comparison is not
+hindered by these additional generations that are mandatory for the search to
+cease.
+
 \section{Comparison}
 \subsection{Random Search}
 \subsection{Hill Climb Search}
