@@ -13,6 +13,7 @@
 \maketitle
 
 \section{Overview}
+\label{sec:overview}
 The task given was to implement a genetic algorithm and hill climber for the
 purposes of solving the test case prioritisation problem. We were provided two
 files containing test case data to be prioritised, one small and one large. In
@@ -20,20 +21,22 @@ addition, a base line random search was also required to act as a baseline
 comparison for the other search implementations.
 
 \section{Problem Representation}
-The TestCase class was created to contain the data that was read from the files,
-containing the list of faults found by the test as well the potential number of
-tests that could be found. This allowed for the coverage of that test to also
-be contained.
+\label{sec:problem_representation}
+The \emph{TestCase} class was created to contain the data that was read from the
+files, containing the list of faults found by the test as well the potential
+number of tests that could be found. This allowed for the coverage of that test
+to also be contained.
 
-The TCChromosome class is the class used by the search algorithms, containing
-the fitness function, crossover and mutation methods that are required for
-the search algorithms. The TCChromosome class (hereafter referred to as the
-Chromosome class) stores a List of TestCases that is the candidate. A List was
-chosen to allow for easier manipulation of the candidate in cases of crossover
-and mutation, since cases could easily be swapped and changed for other test
-cases.
+The \emph{TCChromosome} class is the class used by the search algorithms,
+containing the fitness function, crossover and mutation methods that are required
+for the search algorithms. The \emph{TCChromosome} class (hereafter referred to
+as the \emph{Chromosome} class) stores a List of TestCases that is the
+candidate. A List was chosen to allow for easier manipulation of the candidate
+in cases of crossover and mutation, since cases could easily be swapped and
+changed for other test cases.
 
 \subsection{Fitness Function}
+\label{sub:fitness_function}
 The fitness function utilised is a slightly modified version of the APFD measure
 outlined by Elbaum et al \cite[Section~4.1]{Elbaum:2002:TCP:506201.506205}.
 While their implementation ranges from 0 to 1 (being a percentage calculation),
@@ -48,6 +51,7 @@ addition, due to the need for better results to have a lower fitness value, the
 APFD is deducted from 1 to ensure this.
 
 \subsection{Crossover Method}
+\label{sub:crossover}
 The choice for crossover was taken from Harman et al
 \cite[Section~5.1]{Harman:2012:SSE:2379776.2379787}. Crossover is contained in
 the Chromosome class, taking in the other parent and index as parameters. The
@@ -57,6 +61,7 @@ cases, and inserting from it until the list is filled. This is then used to
 create and return a new chromosome.
 
 \subsection{Mutation Method and Neighbourhood}
+\label{sub:mutation}
 The mutation method and neighbourhood are very similar to each other, being used
 by Genetic Algorithm and Hill Climber respectably to progress in their searches,
 so it was natural to be consistent between them.
@@ -80,7 +85,9 @@ case being replaced was number 150, and the step size was 10, then test cases
 140-149 and 151-160 would replace it for each neighbour.
 
 \section{Implementation}
+\label{sec:implementation}
 \subsection{Reading the Data}
+\label{sub:reading_data}
 The format of the data files given to us was less than ideal. A regular
 expression was made to make the file parsing a lot easier, since I merely had to
 iterate upon the matches to the expression. When examining the data file, one
@@ -94,6 +101,7 @@ a Set of TestCases rather than a List, greatly reducing the number of
 permutations possible for chromosomes.
 
 \subsection{Terminating Searches}
+\label{sub:terminating}
 In comparison to the `Hello World' exercise, the issue of terminating searches
 was more complex due to the nature of the problem meaning that a fitness of 0
 was not guaranteed to be possible, meaning that the termination of searches had
@@ -103,6 +111,7 @@ fitness value to terminate on would be less than ideal. This meant that each
 search implementation needed to handle termination in their own way.
 
 \subsection{Interfaces}
+\label{sub:interfaces}
 There are two interfaces that are utilised by all search algorithms. These are
 the \emph{Search} and \emph{Result} interfaces. The \emph{Search} interface
 provides definitions for the \emph{search} and \emph{benchmark} methods, while
@@ -110,15 +119,35 @@ the \emph{Result} interface is an empty interface that was required so that the
 \emph{search} method mentioned would have consistency in the return.
 
 \subsection{Random Search}
+\label{sub:random_search}
+Random search is naturally rather straightforward. Its limit is provided in the
+configuration file, and it will repeatedly generate new chromosomes until this
+limit is found. This implementation of Random Search keeps a record of the best
+chromosome found, and only replaces it if an improved solution is found. The
+\emph{Result} returned contains the chromosome and the counter indicating when
+it was found.
 
 \subsection{Hill Climbing}
+\label{sub:hill_climbing}
+The hill climbing is performed by starting with a random chromosome, and then
+investigating its neighbours (see \ref{sub:mutation}) to find improvements. If
+no improvement is found, then the algorithm restarts at a new random location.
+The random restart is used to determine when to terminate the search. If the
+best solution is found, then its neighbours are obviously not able to improve
+upon it. This means that we need to prevent the random restart. This is done by
+ensuring the new restart is better than the current best, with continuous
+attempts to find a better solution randomly (similar to random search). A limit
+is added to ensure that if no better solution is found, the search terminates.
 
 \subsection{Genetic Algorithm}
+\label{sub:genetic_algorithm}
+Derp.
 
+\newpage
 \section{Comparison}
-\subsection{Random Search}
-\subsection{Hill Climb Search}
-\subsection{Genetic Algorithm Search}
+\subsection{Random Search Results}
+\subsection{Hill Climb Search Results}
+\subsection{Genetic Algorithm Search Results}
 
 \bibliographystyle{plain}
 \bibliography{report} 
